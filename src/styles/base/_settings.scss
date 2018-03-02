@@ -1,0 +1,25 @@
+// Colors
+
+
+// Typography
+$font-family-sans: Helvetica, Arial, sans-serif;
+$font-size-base: 1.6rem;
+$font-size-large: 2rem;
+
+// Spacing
+$s-size: 1.2rem;
+$m-size: $font-size-base;
+$l-size: ($font-size-base * 2);
+$xl-size: ($font-size-base * 3);
+
+// Breakpoints
+$screen-sm: 45rem;
+
+
+
+// Mixins
+@mixin breakpoint($point) {
+  @media (min-width: $point) {
+    @content;
+  }
+}
