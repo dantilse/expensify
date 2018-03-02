@@ -3,3 +3,6 @@
 ## Running on local server
 - open terminal to root and run $yarn run dev-server
 - page will appear at localhost:8080
+
+## Running Jest tests
+- open terminal to root and run $yarn run test -- --watch
