@@ -1,3 +1,5 @@
-## This is my read me page
+#Getting Started
 
-this page is here to offer some direction
+## Running on local server
+- open terminal to root and run $yarn run dev-server
+- page will appear at localhost:8080
