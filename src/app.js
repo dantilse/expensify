@@ -23,6 +23,7 @@ import filtersReducer from './reducers/filters';
 // Import styles
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
+import 'react-dates/lib/css/_datepicker.css';
 
 // value is returned value from function to access store
 const store = configureStore();
