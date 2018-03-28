@@ -2,6 +2,7 @@
 
 ## Running on local server
 - open terminal to root and run $yarn run dev-server
+- open terminal to root and run $npm run serve
 - page will appear at localhost:8080
 
 ## Running Jest tests
