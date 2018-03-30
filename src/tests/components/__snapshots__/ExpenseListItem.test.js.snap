@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render ExpenseListItem component 1`] = `
+exports[`should render ExpenseListItem component correctly 1`] = `
 <li>
   <h3>
     <Link
