@@ -24,6 +24,8 @@ import filtersReducer from './reducers/filters';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
+// Firebase
+import './firebase/firebase';
 
 // value is returned value from function to access store
 const store = configureStore();
