@@ -27,17 +27,10 @@ database.ref().set({
   console.log('something went wrong ', e);
 });
 
-// database.ref('age').set(37);
-// database.ref('location/city').set('South Austin');
+// database.ref('isSingle').set(null);
 
-// add new data by call
-database.ref('attributes').set({
-  height: 115,
-  weight: 180
-}).then(() => {
-  console.log('attributes have been updated!');
-}).catch((e) => {
-  console.log('something went wrong ', e);
-});
-
-// console.log('I made a requst to change the data.');
+// database.ref('isSingle').remove().then(() => {
+//   console.log('isSingle has been removed');
+// }).catch((e) => {
+//   console.log('Something did not work correclty', e);
+// });
