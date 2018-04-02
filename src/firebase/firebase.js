@@ -21,13 +21,23 @@ database.ref().set({
     city: 'Austin',
     state: 'TX'
   },
+}).then(() => {
+  console.log('Data is saved');
+}).catch((e) => {
+  console.log('something went wrong ', e);
 });
 
-database.ref('age').set(37);
-database.ref('location/city').set('South Austin');
+// database.ref('age').set(37);
+// database.ref('location/city').set('South Austin');
 
 // add new data by call
 database.ref('attributes').set({
   height: 115,
   weight: 180
+}).then(() => {
+  console.log('attributes have been updated!');
+}).catch((e) => {
+  console.log('something went wrong ', e);
 });
+
+// console.log('I made a requst to change the data.');
