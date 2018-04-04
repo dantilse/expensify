@@ -15,17 +15,17 @@ const database = firebase.database();
 
 // Challenge
 // ------------------------------------------------------------
-database.ref().on('value', (snapshot) => {
-  const val = snapshot.val();
-  // console.log(val.name + ' is a ' + val.job.title + ' at ' + val.job.company);
-  console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`);
-}, (e) => {
-  console.log('something went wrong');
-});
+// database.ref().on('value', (snapshot) => {
+//   const val = snapshot.val();
+//   // console.log(val.name + ' is a ' + val.job.title + ' at ' + val.job.company);
+//   console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`);
+// }, (e) => {
+//   console.log('something went wrong');
+// });
 
-setTimeout(() => {
-  database.ref('job/company').set('Google');
-}, 3500);
+// setTimeout(() => {
+//   database.ref('job/company').set('Google');
+// }, 3500);
 
 // Subscribe to database changes
 // ------------------------------------------------------------
@@ -98,3 +98,59 @@ setTimeout(() => {
 // }).catch((e) => {
 //   console.log('Something did not work correclty', e);
 // });
+
+// Expenses Challenge
+// 1.
+database.ref('expenses').push({
+  description: 'rent',
+  note: 'July rent',
+  amount: 1250,
+  createdAt: 0
+});
+// 2.
+database.ref('expenses').push({
+  description: 'dinner',
+  note: 'Dinner at Uchi',
+  amount: 125,
+  createdAt: 0
+});
+// 3.
+database.ref('expenses').push({
+  description: 'drinks',
+  note: 'Drinks at Eberly',
+  amount: 50,
+  createdAt: 0
+});
+
+
+// Notes example
+// database.ref('notes').push({
+//   title: 'First note',
+//   body: 'This is a note'
+// });
+
+// const firebaseNotes = {
+//   notes: {
+//     apoijasdf: {
+//       title: 'First note',
+//       body: 'This is my note'
+//     },
+//     afjaodsie: {
+//       title: 'Second note note',
+//       body: 'This is another note'
+//     }
+//   }
+// };
+//
+// const notes = [{
+//   id: '12',
+//   title: 'First note',
+//   body: 'This is my note'
+// },
+// {
+//   id: '761ase',
+//   title: 'Second note',
+//   body: 'This is another note'
+// }];
+//
+// database.ref('notes').set(notes);
