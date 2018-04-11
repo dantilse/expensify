@@ -25,7 +25,7 @@ import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
 // Firebase
-import './firebase/firebase';
+import { firebase } from './firebase/firebase';
 
 // value is returned value from function to access store
 const store = configureStore();
@@ -35,6 +35,15 @@ const jsx = (
     <AppRouter />
   </Provider>
 );
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    console.log('log in');
+  } else {
+    console.log('log out');
+  }
+});
+
 // Render app to html element
 ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
 
