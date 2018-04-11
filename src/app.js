@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'; // provide store to all components in app
 // Router
-import AppRouter from './routers/AppRouter';
+import AppRouter, { history } from './routers/AppRouter';
 // Store
 import configureStore from './store/configureStore';
 // Actions
@@ -36,17 +36,29 @@ const jsx = (
   </Provider>
 );
 
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    console.log('log in');
-  } else {
-    console.log('log out');
+let hasRendered = false;
+const renderApp = () => {
+  if (!hasRendered) {
+    ReactDOM.render(jsx, document.getElementById('app'));
+    hasRendered = true;
   }
-});
+};
 
 // Render app to html element
 ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
 
-store.dispatch(startSetExpenses()).then(() => {
-  ReactDOM.render(jsx, document.getElementById('app'));
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    store.dispatch(startSetExpenses()).then(() => {
+      renderApp();
+      if (history.location.pathname === '/') {
+        history.push('/dashboard');
+      }
+    });
+    console.log('you are logged in');
+  } else {
+    renderApp();
+    history.push('/');
+    console.log('you are logged out');
+  }
 });
